@@ -1,0 +1,40 @@
+* Robson Score Generator
+* Author: Sushan, Abey
+* Current version: 1.1
+* Version date: 07 June 2019
+
+* Prepare workspace
+cls
+close
+logclose
+
+* Read data file into memory
+read "ghptamay.epx"
+
+* define robson score variable
+define robson ##
+if parity=0 and fetusnum=1 and fetallie=1 and gestage>=37 and onset=1 \
+    then robson=1
+if parity=0 and fetusnum=1 and fetallie=1 and gestage>=37 and onset>1 \
+    then robson=2
+if parity>0 and prevcs=0 and fetusnum=1 and fetallie=1 and gestage>=37 \
+    and onset=1 then robson=3
+if parity>0 and prevcs=0 and fetusnum=1 and fetallie=1 and gestage>=37 \
+    and onset>1 then robson=4
+if parity>0 and prevcs>0 and fetusnum=1 and fetallie=1 and gestage>=37 \
+    then robson=5
+if parity=0 and fetusnum=1 and fetallie=4 then robson=6
+if parity>0 and fetusnum=1 and fetallie=4 then robson=7
+if fetusnum>1 then robson=8
+if fetusnum=1 and (fetallie=2 or fetallie=3) then robson=9
+if fetusnum=1 and fetallie=1 and gestage<37 then robson=10
+
+label robson "Robson-Group"
+
+* Generate Report table
+set echo=off
+logopen "robsonoutput.xls" /replace
+tables delivmode robson /c /r /pct
+logclose
+
+
