@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EpiData xmlns="http://www.epidata.dk/XML/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.epidata.dk/XML/2.1 http://www.epidata.dk/XML/2.1/epx.xsd" version="6" xml:lang="en" dateSeparator="/" decimalSeparator="," timeSeparator="." cycle="2">
+  <Settings dateSeparator="/" timeSeparator="." decimalSeparator=","/>
+  <ProjectSettings autoIncStart="1" timedBackupInterval="10" backupOnShutdown="true" showFieldNames="false" showFieldBorders="true"/>
+  <StudyInfo>
+    <Title>
+      <Text xml:lang="en">Delivery Report - Robson Report Table</Text>
+    </Title>
+    <Author/>
+    <Agency/>
+    <Created>2019/06/03 15.01.47</Created>
+    <Identifier/>
+    <Keywords/>
+    <Modified>2019/06/03 15.01.47</Modified>
+    <Notes/>
+    <Version>1</Version>
+  </StudyInfo>
+  <ValueLabelSets>
+    <ValueLabelSet id="_instname" type="ftInteger" scope="vlsInternal">
+      <ValueLabel order="2" value="1">
+        <Label xml:lang="en">GH Pathanamthitta</Label>
+      </ValueLabel>
+      <ValueLabel order="3" value="2">
+        <Label xml:lang="en">DH Kozhenchery</Label>
+      </ValueLabel>
+      <ValueLabel order="4" value="3">
+        <Label xml:lang="en">GH Adoor</Label>
+      </ValueLabel>
+      <ValueLabel order="5" value="4">
+        <Label xml:lang="en">THQH Thiruvalla</Label>
+      </ValueLabel>
+      <ValueLabel order="6" value="5">
+        <Label xml:lang="en">THQH Ranni</Label>
+      </ValueLabel>
+    </ValueLabelSet>
+    <ValueLabelSet id="_yesno" type="ftInteger" scope="vlsInternal">
+      <ValueLabel order="2" value="0">
+        <Label xml:lang="en">no</Label>
+      </ValueLabel>
+      <ValueLabel order="3" value="1">
+        <Label xml:lang="en">yes</Label>
+      </ValueLabel>
+    </ValueLabelSet>
+    <ValueLabelSet id="_fetallie" type="ftInteger" scope="vlsInternal">
+      <ValueLabel order="2" value="1">
+        <Label xml:lang="en">cephalic</Label>
+      </ValueLabel>
+      <ValueLabel order="3" value="2">
+        <Label xml:lang="en">transverse</Label>
+      </ValueLabel>
+      <ValueLabel order="4" value="3">
+        <Label xml:lang="en">oblique</Label>
+      </ValueLabel>
+      <ValueLabel order="5" value="4">
+        <Label xml:lang="en">breech</Label>
+      </ValueLabel>
+    </ValueLabelSet>
+    <ValueLabelSet id="_labouronset" type="ftInteger" scope="vlsInternal">
+      <ValueLabel order="2" value="1">
+        <Label xml:lang="en">spontaneous</Label>
+      </ValueLabel>
+      <ValueLabel order="3" value="2">
+        <Label xml:lang="en">induced</Label>
+      </ValueLabel>
+      <ValueLabel order="4" value="3">
+        <Label xml:lang="en">CS before labour</Label>
+      </ValueLabel>
+    </ValueLabelSet>
+    <ValueLabelSet id="_modedeliv" type="ftInteger" scope="vlsInternal">
+      <ValueLabel order="2" value="1">
+        <Label xml:lang="en">vaginal</Label>
+      </ValueLabel>
+      <ValueLabel order="3" value="2">
+        <Label xml:lang="en">caesarean section</Label>
+      </ValueLabel>
+    </ValueLabelSet>
+  </ValueLabelSets>
+  <DataFiles>
+    <DataFile id="RobsonReport" created="2019/06/03 15.01.47" modified="2019/06/07 11.13.53" version="" afterRecordState="arsNewRecord">
+      <Caption>
+        <Text xml:lang="en">DeliveryReport</Text>
+      </Caption>
+      <Sections>
+        <Section id="MAIN" top="0" left="0" width="0" height="0">
+          <Fields>
+            <Field id="instname" top="106" left="357" type="ftInteger" length="1" decimals="0" entryMode="emMustEnter" showValueLabel="true" valueLabelRef="_instname">
+              <Question>
+                <Text xml:lang="en">Institution</Text>
+              </Question>
+            </Field>
+            <Field id="delivdate" top="140" left="357" type="ftDMYDate" length="10" decimals="0" entryMode="emMustEnter" confirmEntry="true" showValueLabel="true">
+              <Question>
+                <Text xml:lang="en">Delivery date</Text>
+              </Question>
+            </Field>
+            <Field id="ipno" top="174" left="357" type="ftInteger" length="8" decimals="0" entryMode="emMustEnter" showValueLabel="true">
+              <Question>
+                <Text xml:lang="en">IP Number</Text>
+              </Question>
+            </Field>
+            <Field id="parity" top="208" left="357" type="ftInteger" length="1" decimals="0" entryMode="emMustEnter" showValueLabel="true">
+              <Question>
+                <Text xml:lang="en">Parity</Text>
+              </Question>
+              <Ranges>
+                <Range start="0" end="6"/>
+              </Ranges>
+            </Field>
+            <Field id="prevcs" top="242" left="357" type="ftInteger" length="1" decimals="0" entryMode="emMustEnter" showValueLabel="true" valueLabelRef="_yesno">
+              <Question>
+                <Text xml:lang="en">Previous Caesarean</Text>
+              </Question>
+            </Field>
+            <Field id="fetusnum" top="276" left="357" type="ftInteger" length="1" decimals="0" entryMode="emDefault" confirmEntry="true" showValueLabel="true">
+              <Question>
+                <Text xml:lang="en">No. of fetuses</Text>
+              </Question>
+              <Ranges>
+                <Range start="1" end="3"/>
+              </Ranges>
+            </Field>
+            <Field id="fetallie" top="310" left="357" type="ftInteger" length="1" decimals="0" entryMode="emMustEnter" showValueLabel="true" valueLabelRef="_fetallie">
+              <Question>
+                <Text xml:lang="en">Fetal Presentation</Text>
+              </Question>
+              <Ranges>
+                <Range start="1" end="4"/>
+              </Ranges>
+            </Field>
+            <Field id="gestage" top="344" left="357" type="ftInteger" length="2" decimals="0" entryMode="emMustEnter" showValueLabel="true">
+              <Question>
+                <Text xml:lang="en">Gestational Age (completed weeks)</Text>
+              </Question>
+              <Ranges>
+                <Range start="22" end="40"/>
+              </Ranges>
+            </Field>
+            <Field id="onset" top="378" left="357" type="ftInteger" length="1" decimals="0" entryMode="emMustEnter" showValueLabel="true" valueLabelRef="_labouronset">
+              <Question>
+                <Text xml:lang="en">Onset of labour</Text>
+              </Question>
+              <Ranges>
+                <Range start="1" end="3"/>
+              </Ranges>
+            </Field>
+            <Field id="delivmode" top="411" left="357" type="ftInteger" length="1" decimals="0" entryMode="emMustEnter" showValueLabel="true" valueLabelRef="_modedeliv">
+              <Question>
+                <Text xml:lang="en">Mode of Delivery</Text>
+              </Question>
+              <Ranges>
+                <Range start="1" end="2"/>
+              </Ranges>
+            </Field>
+          </Fields>
+          <Headings>
+            <Heading id="H1" top="13" left="48" type="htH2">
+              <Caption>
+                <Text xml:lang="en">National Health Mission - Arogyakeralam, Pathanamthitta</Text>
+              </Caption>
+            </Heading>
+            <Heading id="H2" top="42" left="303" type="htH4">
+              <Caption>
+                <Text xml:lang="en">RMNCH + A</Text>
+              </Caption>
+            </Heading>
+            <Heading id="H3" top="66" left="169" type="htH3">
+              <Caption>
+                <Text xml:lang="en">Data entry form for monthly delivery data</Text>
+              </Caption>
+            </Heading>
+          </Headings>
+        </Section>
+      </Sections>
+      <Records modified="2019/06/03 15.01.47" encryptedSalt=""/>
+    </DataFile>
+  </DataFiles>
+  <DataFileRelations>
+    <DataFileRelation id="relation_id_1" dataFileRef="RobsonReport"/>
+  </DataFileRelations>
+</EpiData>
